@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Engine Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+}
+
+.chart{
+width:80%;
+margin:auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Engine {{engine}} Dashboard</h1>
+
+<h2>Predicted Remaining Useful Life: {{prediction}} cycles</h2>
+
+<div style="font-size:18px;margin:20px">
+
+<b>Current Cycle:</b> {{current_cycle}} <br>
+
+<b>Predicted Failure Cycle:</b> {{failure_cycle}} <br>
+
+<b>Remaining Cycles:</b> {{prediction}}
+
+</div>
+
+<div class="chart">
+{{gauge | safe}}
+</div>
+
+<br><br>
+
+<div class="chart">
+{{curve | safe}}
+</div>
+
+<br><br>
+
+<div class="chart">
+{{shap | safe}}
+</div>
+
+<br>
+
+<a href="/">Back to Fleet</a>
+
+</body>
+</html>
